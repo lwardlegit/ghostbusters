@@ -16,8 +16,13 @@ public class Main {
          the turns continue until either the ghost is exorcised or the player dies
          */
 
+        // static methods like this one don't need an instance of a class in order to be called, they can be called from anywhere the class is available
+        GameActions.lookSomethingUpOnline();
+
         Player player = new Player("Luther", 10, 1, 3);
         Ghost ghost = new Ghost(20, 0, 3);
+        ghost.discoverBook();
+        AllBooks.pageFlip();
 
             while (player.getHealth() > 0 && ghost.getHealth() > 0) {
                 Random random = new Random();

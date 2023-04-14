@@ -62,4 +62,8 @@ public class Player {
     public void setPlayerHealth(int val){
         this.health = this.health-val;
     }
+
+    public void discoverBook(){
+        System.out.println("the player has discovered a book, what knowledge lies within?");
+    }
 }

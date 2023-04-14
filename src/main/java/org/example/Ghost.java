@@ -36,6 +36,10 @@ public class Ghost {
         return;
     };
 
+    public void discoverBook(){
+        System.out.println("the ghost found one of its old books, maybe the ghost will read it twice?");
+    }
+
     // haunt increases the ghosts health by + 3
     public void haunt(){
         this.health += 3;
