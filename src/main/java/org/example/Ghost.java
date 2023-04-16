@@ -18,22 +18,21 @@ public class Ghost {
 
     // say boo just says boo to the console
 
-    public void learnToSpeak(Player player){
+    public String learnToSpeak(Player player){
         if(this.canSpeak == true){
             this.sayBoo(player);
-        }else {
-            System.out.println("the ghost learned to talk from listening to you");
+        }
             this.canSpeak = true;
-        }
+            return "the ghost learned to talk from listening to you";
     }
-    public void sayBoo(Player player){
+    public String sayBoo(Player player){
         if ( this.canSpeak){
-            System.out.println("BOO!!");
             player.loseAtkPower();
-        }else{
-            System.out.println("ghost can't speak yet");
+            return "BOO!!";
         }
-        return;
+        return "ghost can't speak yet";
+
+
     };
 
     public void discoverBook(){
@@ -41,9 +40,9 @@ public class Ghost {
     }
 
     // haunt increases the ghosts health by + 3
-    public void haunt(){
+    public String haunt(){
         this.health += 3;
-        System.out.println("health has increased by 3");
+        return("health has increased by 3");
     };
 
     // ghost does nothing but won't take damage from an attack next turn if the player attacks
@@ -57,16 +56,15 @@ public class Ghost {
 
     // player will take the difference of the damage if ghost atk is higher than player def + random
     // random represents the dice roll that will be added to ghosts attack
-    public void ghostAttack(Player player){
+    public String ghostAttack(Player player){
         System.out.println("the ghost is trying to attack!");
         Random rand = new Random();
         double attackPlusRoll = Math.floor(Math.random() *(4-1 +this.atk) + 1);
         if(this.atk > player.def){
-            System.out.print("attacking player for "+attackPlusRoll+ "damage");
-            System.out.print("player has"+player.def);
             player.setPlayerHealth(this.atk-player.def);
+            return "attacking player for "+attackPlusRoll+ "damage"+"player has"+player.def;
         }else{
-            System.out.println("the attack does no damage: ghost_attack:"+this.atk+"player_defense:"+player.def);
+            return "the attack does no damage: ghost_attack:"+this.atk+"player_defense:"+player.def;
         }
     }
 

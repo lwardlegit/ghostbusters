@@ -49,11 +49,12 @@ public class Player {
         }
     }
 
-    public void loseAtkPower(){
+    public String loseAtkPower(){
         if(this.atk < 1){
-            return;
+            return "player didn't lose any atk power";
         }
         this.atk = this.atk-1;
+        return "player lost 1 attack power";
     }
 
     public int getHealth(){
