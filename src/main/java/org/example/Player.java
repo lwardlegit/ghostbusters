@@ -1,4 +1,5 @@
 package org.example;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -65,6 +66,7 @@ public class Player {
     }
 
     public void discoverBook(){
+
         System.out.println("the player has discovered a book, what knowledge lies within?");
     }
 }
